@@ -13,3 +13,5 @@ fob.compute_visualization(
 )
 
 session = fo.launch_app(dataset)
+
+session.wait()
