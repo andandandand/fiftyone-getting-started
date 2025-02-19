@@ -10,10 +10,8 @@ python3
 
 ```python
 import fiftyone as fo
-
-fo.list_datasets()
-
-dataset = fo.load_dataset("quickstart")
+import fiftyone.zoo as foz
+dataset = foz.load_zoo_dataset("quickstart")
 
 session = fo.launch_app(dataset)
 

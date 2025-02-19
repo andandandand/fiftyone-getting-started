@@ -1,8 +1,11 @@
 import fiftyone as fo
+import fiftyone.zoo as foz
 
-fo.list_datasets()
-
-dataset = fo.load_dataset("quickstart")
+# Load the quickstart dataset
+# This is a small dataset that ships with fiftyone
+# It contains a few images and labels
+# It's a good starting point for learning the library
+dataset = foz.load_zoo_dataset("quickstart") 
 
 session = fo.launch_app(dataset)
 
