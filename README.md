@@ -10,6 +10,8 @@ This guide walks you through:
 
 ## Installation
 
+This repository is set up to run on a [Github Codespace](https://github.com/features/codespaces), a cloud environment running on Microsoft Azure. 
+
 ## Development Environment
 - The project includes a `.devcontainer/devcontainer.json` for consistent development setup
 - Uses a custom container image with FiftyOne and MongoDB pre-installed
