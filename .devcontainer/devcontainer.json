@@ -9,8 +9,7 @@
             "configureGit": true
         }
     },
-    // Add this postCreateCommand section
-    "postCreateCommand": "pip install 'umap-learn>=0.5'",
+    "postCreateCommand": "pip install --no-cache-dir -r requirements.txt",
     "customizations": {
         "vscode": {
             "extensions": [
