@@ -9,6 +9,8 @@
             "configureGit": true
         }
     },
+    // Add this postCreateCommand section
+    "postCreateCommand": "pip install 'umap-learn>=0.5'",
     "customizations": {
         "vscode": {
             "extensions": [
