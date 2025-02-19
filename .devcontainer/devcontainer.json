@@ -1,6 +1,14 @@
 {
     "name": "FiftyOne Workspace",
+    // The Docker image to use as a base for the dev container
     "image": "voxel51/fiftyone",
+    "features": {
+        // Git needs to be installed inside the container 
+        "ghcr.io/devcontainers/features/git:1": {
+            "version": "latest",
+            "configureGit": true
+        }
+    },
     "customizations": {
         "vscode": {
             "extensions": [
@@ -19,6 +27,7 @@
             ],
             "settings": {
                 "remote.extensionKind": {
+                    // Enable the GitHub Copilot extension in the container
                     "github.copilot-chat": ["ui"]
                 },
                 "terminal.integrated.defaultProfile.linux": "bash",
@@ -39,8 +48,5 @@
                 ]
             }
         }
-    },
-    "onCreateCommand": "wget -P /photos https://github.com/thesteve0/fiftyone-getting-started/releases/download/v.data/downloads.zip || echo 'Download failed'",
-    "postCreateCommand": "wget -P /photos https://github.com/thesteve0/fiftyone-getting-started/releases/download/v.data/downloads.zip",
-    "postStartCommand": "if [ -f /photos/downloads.zip ]; then unzip -t /photos/downloads.zip && unzip -j /photos/downloads.zip -d /photos || echo 'The zip file is corrupted'; else echo 'The zip file does not exist'; fi"
+    }
 }
