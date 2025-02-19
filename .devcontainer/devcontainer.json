@@ -1,48 +1,52 @@
 {
-	"name": "FiftyOne Workspace",
-	"image": "ghcr.io/thesteve0/fiftyone-wkshp-container:latest",
-	"customizations": {
-		"vscode": {
-			"extensions": [
-				"github.copilot",
-				"github.copilot-chat",
-				"ms-python.python",
-				"ms-python.vscode-pylance",
-				"ms-python.debugpy",
-				"GitHub.github-vscode-theme",
-				"ms-python.isort",
-				"ms-toolsai.jupyter",
-				"ms-toolsai.vscode-jupyter-cell-tags",
-				"ms-toolsai.jupyter-keymap",
-				"ms-toolsai.jupyter-renderers",
-				"ms-toolsai.vscode-jupyter-slideshow"
-			],
-			"settings": {
-				"remote.extensionKind": {
-					"github.copilot-chat": ["ui"]
-				}
-			}
-		}
-	},
-	"settings": {
-		"terminal.integrated.shell.linux": "/bin/bash",
-		"python.defaultInterpreterPath": "/opt/.fiftyone-venv/bin/python",
-		"python.linting.enabled": true,
-		"python.linting.pylintEnabled": true,
-		"python.formatting.autopep8Path": "/usr/local/py-utils/bin/autopep8",
-		"python.formatting.blackPath": "/usr/local/py-utils/bin/black",
-		"python.formatting.yapfPath": "/usr/local/py-utils/bin/yapf",
-		"python.linting.banditPath": "/usr/local/py-utils/bin/bandit",
-		"python.linting.flake8Path": "/usr/local/py-utils/bin/flake8",
-		"python.linting.mypyPath": "/usr/local/py-utils/bin/mypy",
-		"python.linting.pycodestylePath": "/usr/local/py-utils/bin/pycodestyle",
-		"python.linting.pydocstylePath": "/usr/local/py-utils/bin/pydocstyle",
-		"python.linting.pylintPath": "/usr/local/py-utils/bin/pylint",
-		"python.linting.pylintArgs": [
-			"--disable=C0111"
-		]
-	},
-	"onCreateCommand": "echo PS1='\"$ \"' >> ~/.bashrc",
-	"postCreateCommand": "wget -P /photos https://github.com/thesteve0/fiftyone-getting-started/releases/download/v.data/downloads.zip",
-	"postStartCommand": "unzip -j /photos/downloads.zip -d /photos"
+    "name": "FiftyOne Workspace",
+    // The Docker image to use as a base for the dev container
+    "image": "voxel51/fiftyone",
+    "features": {
+        // Git needs to be installed inside the container 
+        "ghcr.io/devcontainers/features/git:1": {
+            "version": "latest",
+            "configureGit": true
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "github.copilot",
+                "github.copilot-chat",
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "ms-python.debugpy",
+                "GitHub.github-vscode-theme",
+                "ms-python.isort",
+                "ms-toolsai.jupyter",
+                "ms-toolsai.vscode-jupyter-cell-tags",
+                "ms-toolsai.jupyter-keymap",
+                "ms-toolsai.jupyter-renderers",
+                "ms-toolsai.vscode-jupyter-slideshow"
+            ],
+            "settings": {
+                "remote.extensionKind": {
+                    // Enable the GitHub Copilot extension in the container
+                    "github.copilot-chat": ["ui"]
+                },
+                "terminal.integrated.defaultProfile.linux": "bash",
+                "python.defaultInterpreterPath": "/opt/.fiftyone-venv/bin/python",
+                "python.linting.enabled": true,
+                "python.linting.pylintEnabled": true,
+                "python.formatting.autopep8Path": "/usr/local/py-utils/bin/autopep8",
+                "python.formatting.blackPath": "/usr/local/py-utils/bin/black",
+                "python.formatting.yapfPath": "/usr/local/py-utils/bin/yapf",
+                "python.linting.banditPath": "/usr/local/py-utils/bin/bandit",
+                "python.linting.flake8Path": "/usr/local/py-utils/bin/flake8",
+                "python.linting.mypyPath": "/usr/local/py-utils/bin/mypy",
+                "python.linting.pycodestylePath": "/usr/local/py-utils/bin/pycodestyle",
+                "python.linting.pydocstylePath": "/usr/local/py-utils/bin/pydocstyle",
+                "python.linting.pylintPath": "/usr/local/py-utils/bin/pylint",
+                "python.linting.pylintArgs": [
+                    "--disable=C0111"
+                ]
+            }
+        }
+    }
 }
