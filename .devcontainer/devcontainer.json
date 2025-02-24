@@ -6,7 +6,9 @@
         // Git needs to be installed inside the container 
         "ghcr.io/devcontainers/features/git:1": {
             "version": "latest",
-            "configureGit": true
+            "configureGit": true,
+            "init": true,
+            "defaultBranch": "main"
         }
     },
     "updateContentCommand": "apt-get update && apt-get install -y less",
