@@ -6,12 +6,11 @@
         // Git needs to be installed inside the container 
         "ghcr.io/devcontainers/features/git:1": {
             "version": "latest",
-            "configureGit": true,
-            "init": true,
-            "defaultBranch": "main"
+            "configureGit": true
         }
     },
-    "updateContentCommand": "apt-get update && apt-get install -y less",
+    "updateContentCommand": "apt-get update && apt-get install -y vim less",
+
     "postCreateCommand": "pip install --no-cache-dir -r requirements.txt",
     "customizations": {
         "vscode": {
