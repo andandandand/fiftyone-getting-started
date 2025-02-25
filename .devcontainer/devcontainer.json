@@ -10,9 +10,9 @@
         }
     },
     // Mount a folder from the local file system into the container
-    //"mounts": [
-    //    "source=/Users/antonio/Documents/Projects/kaggle-dogs-vs-cats/train,target=/data/train,type=bind,consistency=cached"
-    //],
+    "mounts": [
+       "source=/Users/antonio/Documents/Projects/JaguarIdentification/Jaguar_IDing_Program,target=/data/train,type=bind,consistency=cached"
+    ],
     "updateContentCommand": "apt-get update && apt-get install -y vim less",
 
     "postCreateCommand": "pip install --no-cache-dir -r requirements.txt",
