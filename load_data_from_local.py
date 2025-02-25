@@ -4,6 +4,7 @@ import os
 name = "jaguars_test"
 dataset_dir = "/workspaces/fiftyone-getting-started/downloads/jaguars"
 
+
 # Delete the dataset if it exists
 try:
     dataset = fo.load_dataset(name)
