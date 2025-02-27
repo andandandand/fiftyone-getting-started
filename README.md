@@ -1,4 +1,4 @@
-# FiftyOne Getting Started
+# FiftyOne Getting Started in Github Codespaces
 
 ## Overview
 This repository provides an introduction to using [FiftyOne](https://voxel51.com/fiftyone/) for visualizing and managing computer vision datasets. FiftyOne is an open-source tool that enables easy exploration of datasets and model performance.
